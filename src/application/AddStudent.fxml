@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddStudentController">
+    <!-- Header -->
+    <top>
+        <Label style="-fx-text-fill: darkblue; -fx-font-weight: bold;" text="Add Student" BorderPane.alignment="CENTER">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+    </top>
+    
+    <!-- Form Content -->
+    <center>
+        <GridPane alignment="CENTER" hgap="10" vgap="10">
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="20" />
+            </padding>
+            <children>
+                <!-- Name -->
+                <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <TextField fx:id="nameField" promptText="Enter Name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                <!-- Father's Name -->
+                <Label text="Father's Name:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <TextField fx:id="fatherNameField" promptText="Enter Father's Name" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                <!-- Surname -->
+                <Label text="Surname:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <TextField fx:id="surnameField" promptText="Enter Surname" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                <!-- Birthday -->
+                <Label text="Birthday:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                <DatePicker fx:id="birthdayField" promptText="DD/MM/YYYY" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                <!-- Phone -->
+                <Label text="Phone:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                <TextField fx:id="phoneField" promptText="Enter Phone Number" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+                <!-- Email -->
+                <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                <TextField fx:id="emailField" promptText="Enter Email" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+                <!-- Class -->
+                <Label text="Class:" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                <TextField fx:id="studentclassField" promptText="Enter Class" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            </children>
+            <!-- Column and Row Constraints -->
+            <columnConstraints>
+                <ColumnConstraints />
+                <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+            </rowConstraints>
+        </GridPane>
+    </center>
+    
+    <!-- Buttons -->
+    <bottom>
+        <HBox alignment="CENTER" spacing="20">
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="20" />
+            </padding>
+            <children>
+                <!-- Save Button -->
+                <Button fx:id="saveButton" onAction="#SaveButtonAction" style="-fx-background-color: darkblue; -fx-text-fill: white; -fx-font-size: 14px;" text="Save" />
+
+                <!-- Cancel Button -->
+                <Button fx:id="cancelButton" onAction="#CancelButtonAction" style="-fx-background-color: darkblue; -fx-text-fill: white; -fx-font-size: 14px;" text="Cancel" />
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AdminDashboardController">
+
+    <!-- Top Header -->
+    <top>
+        <BorderPane prefHeight="80.0" style="-fx-background-color: #3f51b5; -fx-padding: 10;">
+            <center>
+                <Label style="-fx-text-fill: white; -fx-font-size: 32px; -fx-font-weight: bold;" text="Admin Dashboard System" />
+            </center>
+            <right>
+                <Button fx:id="cancelAdmin" onAction="#cancelAdminAction" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 24px;" text="✕" />
+            </right>
+        </BorderPane>
+    </top>
+
+    <!-- Center Content -->
+    <center>
+        <StackPane style="-fx-padding: 20;">
+            <VBox spacing="30">
+                <!-- TableView for displaying admin details -->
+                <TableView fx:id="adminTable" prefHeight="358.0" prefWidth="704.0">
+                    <columns>
+                        <TableColumn fx:id="adminEmailColumn" prefWidth="379.0" text="Email" />
+                        <TableColumn fx:id="adminPasswordColumn" prefWidth="377.0" text="Password" />
+                    </columns>
+                </TableView>
+            </VBox>
+        </StackPane>
+    </center>
+
+    <!-- Bottom Buttons and Actions -->
+    <bottom>
+        <AnchorPane prefHeight="147.0" prefWidth="800.0">
+            <HBox alignment="CENTER" layoutX="144.0" layoutY="14.0" prefHeight="37.0" prefWidth="460.0" spacing="10">
+                <!-- CRUD Operation Buttons -->
+                <Button fx:id="createAdminButton" onAction="#createAdminAction" style="-fx-background-color: #3f51b5; -fx-text-fill: white; -fx-padding: 10 20; -fx-background-radius: 5;" text="Create" />
+                <Button fx:id="updateAdminButton" onAction="#updateAdminAction" style="-fx-background-color: #3f51b5; -fx-text-fill: white; -fx-padding: 10 20; -fx-background-radius: 5;" text="Update" />
+                <Button fx:id="deleteAdminButton" onAction="#deleteAdminAction" style="-fx-background-color: #3f51b5; -fx-text-fill: white; -fx-padding: 10 20; -fx-background-radius: 5;" text="Delete" />
+                <Button fx:id="readAdminButton" onAction="#readAdminAction" style="-fx-background-color: #3f51b5; -fx-text-fill: white; -fx-padding: 10 20; -fx-background-radius: 5;" text="Read" />
+            </HBox>
+
+            <!-- Sign Up Section -->
+            <Label layoutX="253.0" layoutY="81.0" text="Don't have an account?">
+                <font>
+                    <Font name="System Bold Italic" size="14.0" />
+                </font>
+            </Label>
+            <Button fx:id="signupAdminDashboard" layoutX="414.0" layoutY="79.0" mnemonicParsing="false" onAction="#signupAdminDashboardAction" style="-fx-background-color: #3f51b5; -fx-text-fill: white; -fx-padding: 5 5; -fx-background-radius: 5;" text="Sign Up" />
+
+            <!-- Log In Section -->
+            <Label layoutX="291.0" layoutY="113.0" text="Have an account?">
+                <font>
+                    <Font name="System Bold Italic" size="14.0" />
+                </font>
+            </Label>
+            <Button fx:id="loginAdminDashboard" layoutX="418.0" layoutY="111.0" mnemonicParsing="false" onAction="#loginAdminDashboardAction" style="-fx-background-color: #3f51b5; -fx-text-fill: white; -fx-padding: 5 5; -fx-background-radius: 5;" text="Log In" />
+        </AnchorPane>
+    </bottom>
+
+</BorderPane>
